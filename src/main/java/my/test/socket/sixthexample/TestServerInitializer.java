@@ -1,4 +1,4 @@
-package com.shengsiyuan.netty.sixthexample;
+package my.test.socket.sixthexample;
 
 
 import io.netty.channel.ChannelInitializer;

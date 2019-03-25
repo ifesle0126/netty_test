@@ -2,13 +2,22 @@ group 'netty_test'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'com.google.protobuf'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-repositories {
-    mavenCentral()
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.0'
+    }
 }
+
 
 dependencies {
 //    testCompile group: 'junit', name: 'junit', version: '4.12'
@@ -20,4 +29,21 @@ dependencies {
     compile group: 'com.google.protobuf', name: 'protobuf-java', version: '3.6.1'
     compile group: 'com.google.protobuf', name: 'protobuf-java-util', version: '3.6.1'
 
+}
+
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.2.0"
+    }
+
+    generateProtoTasks.generatedFilesBaseDir = "src"
+
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {
+                setOutputSubDir 'java'
+            }
+        }
+    }
 }

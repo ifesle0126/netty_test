@@ -1,4 +1,4 @@
-package com.shengsiyuan.netty.thirdexample;
+package my.test.socket.thirdexample;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

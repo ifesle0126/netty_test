@@ -1,9 +1,9 @@
 syntax = "proto2";
 
-package com.shengsiyuan.protobuf;
+package test;
 
 option optimize_for = SPEED;
-option java_package = "com.shengsiyuan.netty.sixthexample";
+option java_package = "my.test.protocol_buffer.data";
 option java_outer_classname = "MyDataInfo";
 
 message MyMessage {
