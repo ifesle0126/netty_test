@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package test;
+
+option optimize_for = SPEED;
+option java_package = "my.test.protocol_buffer.data";
+option java_outer_classname = "StudentInfo";
+
+message Student {
+    required string name = 1;
+    optional int32 age = 2;
+    optional string address = 3;
+
+}
